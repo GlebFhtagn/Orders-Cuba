@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="Tasks" transaction-type="RESOURCE_LOCAL">
+
+        <class>com.company.tasks.entity.Carrier</class>
+        <class>com.company.tasks.entity.HistoryCost</class>
+        <class>com.company.tasks.entity.TruckType</class>
+        <class>com.company.tasks.entity.Truck</class>
+        <class>com.company.tasks.entity.Goods</class>
+        <class>com.company.tasks.entity.Foodstuffs</class>
+        <class>com.company.tasks.entity.IndustrialProducts</class>
+        <class>com.company.tasks.entity.Delivery</class>
+    </persistence-unit>
+</persistence>
