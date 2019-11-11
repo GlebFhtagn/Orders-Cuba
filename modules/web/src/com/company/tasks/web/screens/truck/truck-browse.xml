@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://browseCaption"
+        focusComponent="trucksTable"
+        messagesPack="com.company.tasks.web.screens.truck">
+    <data readOnly="true">
+        <collection id="trucksDc"
+                    class="com.company.tasks.entity.Truck"
+                    view="truck-view">
+            <loader id="trucksDl">
+                <query>
+                    <![CDATA[select e from tasks_Truck e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="trucksTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="trucksTable"
+                dataLoader="trucksDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="trucksTable"
+                    width="100%"
+                    dataContainer="trucksDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="number"/>
+                <column id="carrier"/>
+                <column id="truckType"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="trucksTable.create"/>
+                <button id="editBtn" action="trucksTable.edit"/>
+                <button id="removeBtn" action="trucksTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

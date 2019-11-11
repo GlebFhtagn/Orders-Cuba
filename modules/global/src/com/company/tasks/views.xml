@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
 
+    <view entity="tasks_Truck" name="truck-view" extends="_local">
+        <property name="carrier" view="_minimal"/>
+        <property name="truckType" view="_minimal"/>
+    </view>
 </views>
